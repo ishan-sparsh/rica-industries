@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rica | Premium Clean-Label Guacamole</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Integration -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Beth+Ellen&family=Pinyon+Script&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons for premium UI look -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            avocado: '#799C3A',
+            sunlit: '#F2D049',
+            terracotta: '#C85C32',
+            forest: '#1E3512',
+            obsidian: '#141414',
+            taupe: '#F4F0EA',
+            earth: '#4A3525',
+            turquoise: '#1BB0AD',
+          },
+          fontFamily: {
+            pinyon: ['"Pinyon Script"', 'cursive'],
+            beth: ['"Beth Ellen"', 'cursive'],
+            opensans: ['"Open Sans"', 'sans-serif'],
+            helvetica: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Times New Roman MT Condensed look */
+    .font-times-condensed {
+      font-family: "Times New Roman", Times, serif;
+      letter-spacing: -0.04em;
+      font-stretch: condensed;
+      font-weight: 700;
+    }
+    
+    /* Modern Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F4F0EA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #799C3A;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1E3512;
+    }
+
+    /* Before/After Slider Clip Path style */
+    .clip-comparison {
+      clip-path: inset(0 0 0 var(--slider-pos, 50%));
+    }
+  </style>
+</head>
+<body class="bg-taupe text-obsidian font-helvetica overflow-x-hidden antialiased">
+
+  <!-- Dynamic Global Toast Notifications -->
+  <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-40 bg-taupe/90 backdrop-blur-md border-b border-obsidian/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo and First Letter Stylization -->
+      <a href="#" class="flex items-center space-x-1 group">
+        <span class="font-pinyon text-4xl text-terracotta leading-none select-none transition-transform group-hover:scale-110 duration-300">R</span>
+        <span class="font-times-condensed text-2xl tracking-tight text-forest -ml-1">ICA</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide text-forest/90">
+        <a href="#why-rica" class="hover:text-terracotta transition-colors duration-200">The Problem</a>
+        <a href="#product-spotlight" class="hover:text-terracotta transition-colors duration-200">Our First Star</a>
+        <a href="#clean-promise" class="hover:text-terracotta transition-colors duration-200">The Promise</a>
+        <a href="#our-journey" class="hover:text-terracotta transition-colors duration-200">Our Journey</a>
+        <a href="#store-locator" class="hover:text-terracotta transition-colors duration-200">Where to Buy</a>
+      </nav>
+
+      <!-- Action Button & Handwritten Callout -->
+      <div class="flex items-center space-x-6">
+        <div class="hidden lg:block relative">
+          <span class="font-beth text-[11px] text-terracotta absolute -top-7 -left-12 rotate-[-8deg] whitespace-nowrap select-none">
+            Stress-free Hassles!
+          </span>
+          <svg class="absolute -top-3 -left-3 w-8 h-8 text-terracotta/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+        <a href="#store-locator" class="bg-forest text-taupe px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider hover:bg-avocado hover:text-white transition-all duration-300 shadow-md">
+          Find Stockists
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: HERO SECTION -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden py-16 px-6 bg-gradient-to-br from-taupe via-white to-taupe/50">
+    <!-- Abstract Overlays (Geometric & Organic guidelines) -->
+    <div class="absolute -top-12 -left-12 w-64 h-64 bg-avocado/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-0 w-80 h-80 bg-sunlit/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/4 right-5 w-48 h-48 border border-forest/5 rounded-full pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Copy Presentation -->
+      <div class="lg:col-span-7 flex flex-col space-y-6">
+        <!-- Badge -->
+        <div class="inline-flex items-center space-x-2 bg-avocado/10 text-forest font-semibold text-xs px-3 py-1.5 rounded-full self-start border border-avocado/20">
+          <span class="w-2 h-2 rounded-full bg-avocado animate-ping"></span>
+          <span>THE LAUNCH OF A PREMIUM ALTERNATIVE</span>
+        </div>
+
+        <!-- Headline with Strict Typographic Rule -->
+        <h1 class="text-5xl md:text-7xl text-forest leading-[0.95] font-times-condensed max-w-2xl">
+          <span class="font-pinyon text-7xl md:text-9xl text-terracotta leading-none inline-block -ml-2 -mb-2">G</span>uacamole,
+          <br class="hidden md:inline">The Way Nature Intended.
+        </h1>
+
+        <!-- Premium Value Proposition -->
+        <p class="text-lg text-forest/80 max-w-lg leading-relaxed">
+          Uncompromisingly fresh, completely preservative-free, and crafted exclusively with 100% hand-picked Hass avocados. Rica delivers the pristine taste of tableside preparation without the unpredictable hassle.
+        </p>
+
+        <!-- CTA Cluster with Accent Pointers -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+          <a href="#product-spotlight" class="bg-terracotta text-white font-semibold text-center py-4 px-8 rounded-xl shadow-lg shadow-terracotta/20 hover:bg-forest transition-all duration-300 transform hover:-translate-y-0.5">
+            Explore Our First Star
+          </a>
+          <a href="#why-rica" class="bg-white hover:bg-forest hover:text-white text-forest border border-forest/20 font-semibold text-center py-4 px-8 rounded-xl transition-all duration-300">
+            Why Clean-Label?
+          </a>
+        </div>
+
+        <!-- Social Proof Checklist -->
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-forest/10 max-w-lg">
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold font-times-condensed text-forest">100%</span>
+            <span class="text-[11px] uppercase tracking-wider text-forest/60">Natural Hass</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold font-times-condensed text-forest">Zero</span>
+            <span class="text-[11px] uppercase tracking-wider text-forest/60">Preservatives</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold font-times-condensed text-forest">Pristine</span>
+            <span class="text-[11px] uppercase tracking-wider text-forest/60">Ready to Eat</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Section (Rica's premium custom SVG rendering & doodles) -->
+      <div class="lg:col-span-5 relative flex justify-center items-center">
+        <!-- Floating Food Doodle Accent: Lime -->
+        <div class="absolute -top-4 -right-2 animate-bounce duration-1000 z-20">
+          <svg class="w-16 h-16 text-avocado/80 drop-shadow-md" viewBox="0 0 100 100" fill="none">
+            <!-- Hand-drawn style Lime Wedge doodle -->
+            <path d="M10,50 C10,15 50,10 85,25 C75,55 45,85 10,50 Z" fill="#9CC53B" stroke="#4A5F1E" stroke-width="3" />
+            <path d="M22,46 C28,26 48,22 72,30" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="2,2"/>
+            <circle cx="45" cy="40" r="3" fill="#FFFFFF"/>
+            <circle cx="58" cy="45" r="2.5" fill="#FFFFFF"/>
+          </svg>
+        </div>
+
+        <!-- Floating Food Doodle Accent: Avocado Half -->
+        <div class="absolute -bottom-8 -left-4 rotate-[15deg] z-20">
+          <svg class="w-24 h-24 drop-shadow-lg" viewBox="0 0 120 160" fill="none">
+            <!-- Avocado Outer Skin -->
+            <path d="M60,10 C95,10 115,50 110,95 C105,135 85,150 60,150 C35,150 15,135 10,95 C5,50 25,10 60,10 Z" fill="#243714" stroke="#121D0A" stroke-width="3"/>
+            <!-- Flesh -->
+            <path d="M60,20 C87,20 102,55 98,92 C94,125 78,138 60,138 C42,138 26,125 22,92 C18,55 33,20 60,20 Z" fill="#B9D553"/>
+            <path d="M60,25 C82,25 96,57 92,90 C88,120 75,132 60,132 C45,132 32,120 28,90 C24,57 38,25 60,25 Z" fill="#E6EE9C"/>
+            <!-- Pit -->
+            <circle cx="60" cy="95" r="24" fill="#4A3525" stroke="#2B1E14" stroke-width="2"/>
+            <!-- Pit Highlight -->
+            <ellipse cx="53" cy="88" rx="5" ry="3" fill="#FFFFFF" transform="rotate(-30 53 88)"/>
+          </svg>
+        </div>
+
+        <!-- Main Product Display (Minimalist structural showcase box) -->
+        <div class="w-full max-w-[380px] bg-white rounded-[32px] p-6 shadow-2xl border-2 border-forest relative">
+          <!-- Geometric inner layout accent -->
+          <div class="absolute inset-2 border border-dashed border-avocado/40 rounded-[24px] pointer-events-none"></div>
+          
+          <!-- Product Packaging Render -->
+          <div class="relative bg-gradient-to-b from-avocado to-forest rounded-2xl p-6 overflow-hidden aspect-square flex flex-col justify-between text-white shadow-inner">
+            <!-- Label patterns -->
+            <div class="absolute -right-12 -top-12 w-48 h-48 bg-sunlit/10 rounded-full border border-sunlit/20"></div>
+            
+            <div class="flex justify-between items-start z-10">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-white/20 px-2 py-0.5 rounded-full">premium quality</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-sunlit">100% natural</span>
+            </div>
+
+            <!-- Central Brand Identity in Pack -->
+            <div class="text-center z-10 py-4">
+              <span class="font-pinyon text-6xl text-sunlit leading-none select-none block drop-shadow-md">Rica</span>
+              <h3 class="font-times-condensed text-2xl tracking-widest uppercase text-white -mt-2">GUACAMOLE</h3>
+              <p class="text-[9px] uppercase tracking-wider text-taupe/80 mt-1">preservative-free • clean label</p>
+            </div>
+
+            <!-- Bowl Vector inside Container Rendering -->
+            <div class="relative flex justify-center z-10">
+              <svg class="w-32 h-16 drop-shadow-lg" viewBox="0 0 160 80">
+                <!-- Rich gold/green fresh guacamole dip surface -->
+                <ellipse cx="80" cy="40" rx="70" ry="30" fill="#92B13F" stroke="#F2D049" stroke-width="2"/>
+                <ellipse cx="80" cy="40" rx="60" ry="22" fill="#7FA12F" />
+                <!-- Herb pieces, salt crystals, and tomato chunks vectors -->
+                <rect x="50" y="32" width="6" height="4" rx="1" fill="#C85C32" transform="rotate(15 50 32)"/>
+                <rect x="100" y="28" width="5" height="5" rx="1" fill="#C85C32" transform="rotate(-40 100 28)"/>
+                <circle cx="75" cy="30" r="2" fill="#E6EE9C"/>
+                <circle cx="85" cy="45" r="3" fill="#1E3512"/>
+                <path d="M60,45 Q65,42 70,48" stroke="#1E3512" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M95,40 Q98,35 105,38" stroke="#1E3512" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Bottom Label info inside structural display -->
+          <div class="mt-6 text-center">
+            <span class="font-times-condensed text-xl text-forest block tracking-wide">EL CLÁSICO STYLE</span>
+            <div class="flex justify-center items-center space-x-1.5 mt-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+              <span class="text-xs font-semibold text-forest/70 uppercase tracking-widest font-opensans">Net Wt. 8 oz (227g)</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+            </div>
+            <!-- Interactive Ingredient Peek -->
+            <button onclick="scrollToSpotlight()" class="mt-4 inline-flex items-center space-x-1 text-xs font-bold text-terracotta hover:text-forest transition-colors duration-200">
+              <span>View Ingredient Breakdown</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: THE NARRATIVE — WHY RICA? (PROBLEM VS. SOLUTION) -->
+  <section id="why-rica" class="py-24 px-6 bg-white border-t border-b border-obsidian/10 relative overflow-hidden">
+    <!-- Clean Minimalist Line Art framing layout -->
+    <div class="absolute inset-x-0 top-0 h-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-avocado/10 via-transparent to-transparent"></div>
+    <div class="absolute right-0 top-1/4 w-32 h-96 border-r-2 border-dashed border-forest/10 rounded-l-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-terracotta font-opensans">The Freshness Dilemma</span>
+        <h2 class="text-4xl md:text-6xl text-forest font-times-condensed mt-2">
+          <span class="font-pinyon text-5xl md:text-8xl text-terracotta leading-none block md:inline">W</span>hy Rica Exists
+        </h2>
+        <p class="text-base text-forest/70 mt-4 leading-relaxed font-helvetica">
+          Making fresh guacamole at home shouldn't feel like a high-stakes gamble. Rica bridges the frustrating gap between raw unpredictability and shelf-stable chemicals.
+        </p>
+      </div>
+
+      <!-- Problem vs Solution interactive slider and Linear Typography blocks -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left details column -->
+        <div class="lg:col-span-5 flex flex-col space-y-6">
+          <div class="bg-taupe/50 p-6 rounded-2xl border border-obsidian/5 relative">
+            <span class="absolute -top-3 -left-3 bg-terracotta text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">The Hassle</span>
+            <h4 class="font-times-condensed text-xl text-forest mt-2">The Raw Avocado Struggle</h4>
+            <p class="text-xs text-forest/70 mt-2 leading-relaxed">
+              Unripe rocks in the morning, brown mush by night. Slicing open an avocado often reveals disappointing black spots, fiber strings, and inconsistent oil-to-water ratios.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-forest/80 font-semibold">
+              <li class="flex items-center space-x-2">
+                <i data-lucide="x-circle" class="w-4 h-4 text-terracotta flex-shrink-0"></i>
+                <span>Oxidizes & turns black in minutes</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="x-circle" class="w-4 h-4 text-terracotta flex-shrink-0"></i>
+                <span>Wastes up to 40% of unripe/bruised yield</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-avocado/10 p-6 rounded-2xl border border-avocado/20 relative">
+            <span class="absolute -top-3 -left-3 bg-avocado text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">The Solution</span>
+            <h4 class="font-times-condensed text-xl text-forest mt-2">Rica Clean-Label Perfection</h4>
+            <p class="text-xs text-forest/70 mt-2 leading-relaxed">
+              We process our Hass avocados within hours of harvesting, maintaining beautiful cellular integrity. No artificial gas, zero citric acid alterations, and absolutely no preservation pasteurizing that ruins flavor.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-forest/80 font-semibold">
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-avocado flex-shrink-0"></i>
+                <span>Beautiful, rich texture with 100% stable green</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-avocado flex-shrink-0"></i>
+                <span>Perfect salt, jalapeño & lime profile every bite</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right interactive Slider (Compare homemade vs Rica) -->
+        <div class="lg:col-span-7 flex flex-col items-center">
+          <!-- Helpful tooltip -->
+          <div class="mb-4 flex items-center space-x-2">
+            <span class="font-beth text-xs text-terracotta">Slide to reveal the truth!</span>
+            <i data-lucide="arrow-down-right" class="w-4 h-4 text-terracotta animate-pulse"></i>
+          </div>
+
+          <!-- Interactive Comparison Slider Box -->
+          <div id="comparison-slider" class="relative w-full max-w-xl aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-forest select-none cursor-ew-resize">
+            
+            <!-- Before Layer: Messy / Oxidized Homemade -->
+            <div class="absolute inset-0 bg-[#3D3A35] flex flex-col items-center justify-center p-8 text-center text-taupe">
+              <!-- Dark, oxidized background representation -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-earth/30 to-[#2A2925] opacity-90 z-0"></div>
+              
+              <!-- Floating Corner Indicator Label -->
+              <span class="absolute top-4 left-4 bg-black/60 text-rose-300 font-bold text-[10px] uppercase px-2.5 py-1.5 rounded-md tracking-wider z-20 font-opensans border border-rose-950/20">
+                Homemade Hassle
+              </span>
+
+              <div class="relative z-10 flex flex-col items-center">
+                <!-- SVG of Oxidized ugly brown/grey guacamole bowl -->
+                <svg class="w-48 h-28 mb-4 filter saturate-50 brightness-50" viewBox="0 0 160 80">
+                  <ellipse cx="80" cy="40" rx="70" ry="30" fill="#5C5546" stroke="#423E33" stroke-width="2"/>
+                  <ellipse cx="80" cy="40" rx="60" ry="20" fill="#4B4639"/>
+                  <!-- Black oxidation spots -->
+                  <circle cx="60" cy="35" r="5" fill="#2B2822"/>
+                  <circle cx="95" cy="45" r="4" fill="#2B2822"/>
+                  <circle cx="78" cy="28" r="6" fill="#1C1A16"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- After Layer: Clean, Radiant Rica (Controlled by custom styling clip) -->
+            <div id="rica-after-layer" class="absolute inset-0 bg-[#799C3A] flex flex-col items-center justify-center p-8 text-center text-white clip-comparison transition-all duration-75">
+              <div class="absolute inset-0 bg-gradient-to-tr from-forest/50 to-avocado opacity-95 z-0"></div>
+              
+              <!-- Floating Corner Indicator Label -->
+              <span class="absolute top-4 right-4 bg-forest text-sunlit font-bold text-[10px] uppercase px-2.5 py-1.5 rounded-md tracking-wider border border-sunlit/25 z-20 font-opensans">
+                Rica Perfection
+              </span>
+
+              <div class="relative z-10 flex flex-col items-center">
+                <!-- SVG of Perfect gold-green Rica guacamole bowl -->
+                <svg class="w-48 h-28 mb-4 drop-shadow-lg" viewBox="0 0 160 80">
+                  <ellipse cx="80" cy="40" rx="70" ry="30" fill="#92B13F" stroke="#F2D049" stroke-width="2"/>
+                  <ellipse cx="80" cy="40" rx="60" ry="20" fill="#7FA12F"/>
+                  <!-- Vibrant cilantro, tomato chunks, spice flecks -->
+                  <rect x="50" y="32" width="6" height="4" rx="1" fill="#C85C32" transform="rotate(15 50 32)"/>
+                  <rect x="100" y="28" width="5" height="5" rx="1" fill="#C85C32" transform="rotate(-40 100 28)"/>
+                  <circle cx="75" cy="30" r="2" fill="#E6EE9C"/>
+                  <circle cx="85" cy="45" r="3" fill="#1E3512"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Divider Line with handle -->
+            <div id="slider-handle" class="absolute top-0 bottom-0 w-1 bg-sunlit z-30 pointer-events-none" style="left: 50%;">
+              <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-sunlit text-forest rounded-full flex items-center justify-center shadow-xl border-2 border-forest">
+                <i data-lucide="chevrons-left-right" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Fixed Static Comparison Text Cards Below the Slider to Resolve Text Overlaps -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 w-full max-w-xl">
+            <!-- Left Card: Homemade Struggle -->
+            <div class="bg-taupe/40 p-4 rounded-xl border border-obsidian/10">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-rose-500 bg-rose-500/10 px-2.5 py-0.5 rounded-full font-opensans">Oxidation Struggle</span>
+              <h4 class="font-times-condensed text-lg text-forest mt-2">Blackening & Unripe Rocks</h4>
+              <p class="text-xs text-forest/70 mt-1 leading-relaxed font-opensans">
+                Left out for just 15 minutes, standard avocados oxidize into an unappetizing brown sludge.
+              </p>
+            </div>
+            <!-- Right Card: Rica Promise -->
+            <div class="bg-avocado/10 p-4 rounded-xl border border-avocado/20">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-avocado bg-avocado/20 px-2.5 py-0.5 rounded-full font-opensans font-semibold">Rica Guarantee</span>
+              <h4 class="font-times-condensed text-lg text-forest mt-2">Ready-To-Eat Vibrant Vitality</h4>
+              <p class="text-xs text-forest/70 mt-1 leading-relaxed font-opensans">
+                Rica's proprietary fresh-pack locks in the bright, natural lime and lipid stability.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: OUR FIRST STAR (PRODUCT SPOTLIGHT) -->
+  <section id="product-spotlight" class="py-24 px-6 bg-taupe relative overflow-hidden">
+    <!-- Abstract organic background layout frames -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-sunlit/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-avocado/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-terracotta font-opensans">Product Spotlight</span>
+        <h2 class="text-4xl md:text-6xl text-forest font-times-condensed mt-2">
+          <span class="font-pinyon text-5xl md:text-8xl text-terracotta leading-none block md:inline">O</span>ur First Star
+        </h2>
+        <p class="text-base text-forest/70 mt-4 leading-relaxed font-helvetica">
+          The flagship pure-label recipe. Click the interactive hotspots to inspect how we preserve premium culinary integrity without toxic compounds.
+        </p>
+      </div>
+
+      <!-- Main spotlight layout with interactive hotspot inspection -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Interactive packaging viewer with hot points -->
+        <div class="lg:col-span-6 flex justify-center relative">
+          
+          <!-- Subtle line artwork connecting points -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none hidden md:block" viewBox="0 0 500 500">
+            <!-- Dynamic path loops connecting highlights -->
+            <path d="M 120 180 L 250 250 M 380 180 L 250 250 M 250 420 L 250 250" stroke="#799C3A" stroke-width="1.5" stroke-dasharray="4,4" fill="none" opacity="0.4"/>
+          </svg>
+
+          <!-- Standard premium container outline -->
+          <div class="relative bg-white p-8 rounded-[40px] shadow-2xl border-4 border-forest max-w-md w-full">
+            <div class="absolute inset-3 border-2 border-dashed border-avocado/20 rounded-[32px] pointer-events-none"></div>
+            
+            <div class="relative aspect-square rounded-3xl bg-gradient-to-br from-avocado via-avocado to-forest p-8 flex flex-col justify-between text-white overflow-hidden shadow-inner">
+              
+              <!-- Hotspots (Clickable points with custom logic) -->
+              
+              <!-- Hotspot 1: Hass Avocados -->
+              <button onclick="revealHotspot(1)" class="absolute top-[25%] left-[30%] z-20 group">
+                <span class="absolute inline-flex h-6 w-6 rounded-full bg-sunlit/60 animate-ping"></span>
+                <span class="relative flex items-center justify-center rounded-full h-6 w-6 bg-sunlit text-forest font-bold text-xs shadow-md border border-forest">1</span>
+              </button>
+
+              <!-- Hotspot 2: Clean Label Acid Control -->
+              <button onclick="revealHotspot(2)" class="absolute top-[45%] right-[25%] z-20 group">
+                <span class="absolute inline-flex h-6 w-6 rounded-full bg-sunlit/60 animate-ping"></span>
+                <span class="relative flex items-center justify-center rounded-full h-6 w-6 bg-sunlit text-forest font-bold text-xs shadow-md border border-forest">2</span>
+              </button>
+
+              <!-- Hotspot 3: Low Temperature Sealing -->
+              <button onclick="revealHotspot(3)" class="absolute bottom-[25%] left-[50%] z-20 group">
+                <span class="absolute inline-flex h-6 w-6 rounded-full bg-sunlit/60 animate-ping"></span>
+                <span class="relative flex items-center justify-center rounded-full h-6 w-6 bg-sunlit text-forest font-bold text-xs shadow-md border border-forest">3</span>
+              </button>
+
+              <!-- Inner package text layers -->
+              <div class="flex justify-between items-center w-full">
+                <span class="text-xs uppercase tracking-widest font-bold text-sunlit">el clásico</span>
+                <span class="bg-forest/40 border border-white/20 text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-widest">Star Choice</span>
+              </div>
+
+              <div class="text-center my-auto">
+                <span class="font-pinyon text-7xl text-sunlit leading-none block drop-shadow-md select-none">Rica</span>
+                <span class="font-times-condensed text-3xl tracking-widest uppercase text-white -mt-3 block">GUACAMOLE</span>
+                <p class="text-[10px] uppercase tracking-wider text-taupe/95 mt-1 font-semibold">100% RAW FRESH HASS • NO CITRIC ACID ADDITIONS</p>
+              </div>
+
+              <div class="text-center">
+                <p class="text-xs font-bold text-white/90">ZERO PRESERVATIVES</p>
+                <div class="w-full h-[1px] bg-white/20 my-2"></div>
+                <p class="text-[9px] uppercase tracking-widest text-taupe/70">ready-to-eat luxury dip</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotspot Inspection descriptions Column -->
+        <div class="lg:col-span-6 flex flex-col justify-center space-y-6">
+          <div class="border-l-4 border-terracotta pl-4">
+            <span class="text-xs font-semibold text-terracotta uppercase tracking-wider font-opensans">Click any yellow bubble on the package</span>
+            <h3 class="text-3xl font-times-condensed text-forest mt-1">Flagship Specification Guardrails</h3>
+          </div>
+
+          <!-- Hotspot Active Panels -->
+          <div id="hotspot-default" class="bg-white p-6 rounded-2xl border border-forest/10 shadow-sm transition-all duration-300">
+            <div class="flex items-center space-x-3 text-avocado">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+              <span class="font-times-condensed text-xl text-forest">Interactive Lab Breakdown</span>
+            </div>
+            <p class="text-xs text-forest/70 mt-3 leading-relaxed">
+              We leverage premium, high-integrity agricultural procedures to yield unmatched guacamole longevity naturally. Click the numbers in the display on the left to reveal our precise specifications.
+            </p>
+          </div>
+
+          <!-- Hotspot Panel 1 -->
+          <div id="hotspot-1" class="hidden bg-white p-6 rounded-2xl border-2 border-avocado shadow-lg transition-all duration-300 transform scale-100">
+            <div class="flex items-center space-x-3 text-avocado">
+              <span class="bg-avocado text-white text-xs font-bold px-2 py-1 rounded-md">01</span>
+              <span class="font-times-condensed text-xl text-forest">100% Pure Hass Hand Sourcing</span>
+            </div>
+            <p class="text-xs text-forest/70 mt-3 leading-relaxed">
+              We never pool general-grade windfalls or industrial scraps. Every container of Rica starts with perfectly sun-ripened Hass avocados hand-inspected for rich oil concentration (minimum 23% dry matter baseline), ensuring exquisite culinary density.
+            </p>
+            <div class="mt-4 pt-4 border-t border-forest/10 flex items-center justify-between text-[11px] font-semibold text-forest">
+              <span>Primary Ingredient: Raw Avocado</span>
+              <span class="text-avocado">Strict Spec Verified</span>
+            </div>
+          </div>
+
+          <!-- Hotspot Panel 2 -->
+          <div id="hotspot-2" class="hidden bg-white p-6 rounded-2xl border-2 border-avocado shadow-lg transition-all duration-300 transform scale-100">
+            <div class="flex items-center space-x-3 text-avocado">
+              <span class="bg-avocado text-white text-xs font-bold px-2 py-1 rounded-md">02</span>
+              <span class="font-times-condensed text-xl text-forest">Proprietary Lipid Preservation (No Citric Acid)</span>
+            </div>
+            <p class="text-xs text-forest/70 mt-3 leading-relaxed">
+              Traditional brands flood dips with heavy citric/ascorbic acid to stall oxidation, resulting in a sour chemical aftertaste. Rica utilizes a cold-gassed custom micro-atmosphere sealing method, neutralizing oxygen while preserving natural avocado creaminess.
+            </p>
+            <div class="mt-4 pt-4 border-t border-forest/10 flex items-center justify-between text-[11px] font-semibold text-forest">
+              <span>Acidity Regulation: Cold Gassing</span>
+              <span class="text-avocado">Pure Taste Preserved</span>
+            </div>
+          </div>
+
+          <!-- Hotspot Panel 3 -->
+          <div id="hotspot-3" class="hidden bg-white p-6 rounded-2xl border-2 border-avocado shadow-lg transition-all duration-300 transform scale-100">
+            <div class="flex items-center space-x-3 text-avocado">
+              <span class="bg-avocado text-white text-xs font-bold px-2 py-1 rounded-md">03</span>
+              <span class="font-times-condensed text-xl text-forest">Zero-Heat Oxygen Evacuation Sealing</span>
+            </div>
+            <p class="text-xs text-forest/70 mt-3 leading-relaxed">
+              Thermal processing ruins delicate lipids and turns vitamins bitter. Rica is packaged inside our high-tech cleanrooms using ultra-premium non-thermal oxygen evacuation, giving you the safety of pasteurization without ruining color, smell, or nutrients.
+            </p>
+            <div class="mt-4 pt-4 border-t border-forest/10 flex items-center justify-between text-[11px] font-semibold text-forest">
+              <span>Processing Standard: Cold Pressure</span>
+              <span class="text-avocado">Premium Nutritional Integrity</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: THE CLEAN LABEL PROMISE (BRAND USPS) -->
+  <section id="clean-promise" class="py-24 px-6 bg-forest text-white relative overflow-hidden">
+    <!-- Solid geometric structural accents framing USPs -->
+    <div class="absolute top-0 right-0 w-64 h-64 bg-avocado/15 rounded-bl-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-48 h-48 bg-terracotta/15 rounded-tr-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-xs font-bold uppercase tracking-widest text-sunlit font-opensans">Verified Integrity Standards</span>
+        <h2 class="text-4xl md:text-6xl text-white font-times-condensed mt-2">
+          <span class="font-pinyon text-5xl md:text-8xl text-sunlit leading-none block md:inline">T</span>he Clean Label Promise
+        </h2>
+        <p class="text-base text-taupe/75 mt-4 leading-relaxed font-helvetica">
+          Compare Rica's ultra-premium recipe guidelines against standard shelf-stable options. Clear-label integrity you can instantly trust and taste.
+        </p>
+      </div>
+
+      <!-- Icon-driven premium 3-Column structural USPs -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- USP 1: Hass Avocados -->
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-avocado/20 flex items-center justify-center text-sunlit mb-6">
+              <i data-lucide="leaf" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-times-condensed text-2xl text-white tracking-wide">100% Natural Fresh Hass</h3>
+            <p class="text-xs text-taupe/80 mt-3 leading-relaxed">
+              No soy fillers, no pea proteins, and zero vegetable oil padding. Just wholesome premium avocados grown in pure mineral-rich soils and mashed to absolute chunked texture perfection.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] uppercase tracking-wider text-sunlit font-bold">
+            <span>Guaranteed Ingredient No.1</span>
+            <i data-lucide="check" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- USP 2: Zero Artificial Preservatives -->
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-terracotta/20 flex items-center justify-center text-sunlit mb-6">
+              <i data-lucide="shield-alert" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-times-condensed text-2xl text-white tracking-wide">Zero Artificial Compounds</h3>
+            <p class="text-xs text-taupe/80 mt-3 leading-relaxed">
+              Absolutely free from potassium sorbate, sodium benzoate, calcium disodium EDTA, or toxic dyes. We trust the pure, bold defensive properties of natural cold-pressed lime juice and pink salt.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] uppercase tracking-wider text-sunlit font-bold">
+            <span>preservative free</span>
+            <i data-lucide="check" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- USP 3: Fitness & Diet Friendly -->
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-turquoise/20 flex items-center justify-center text-sunlit mb-6">
+              <i data-lucide="activity" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-times-condensed text-2xl text-white tracking-wide">Fitness & Clean Macros</h3>
+            <p class="text-xs text-taupe/80 mt-3 leading-relaxed">
+              Packed with premium monounsaturated heart-healthy lipids, digestive dietary fibers, and potassium. Perfectly structured for clean diets, keto, paleolithic compliance, and calorie tracking.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] uppercase tracking-wider text-sunlit font-bold">
+            <span>Active Diet Certified</span>
+            <i data-lucide="check" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Interactive Micro-calculator for pure Hass macros -->
+      <div class="mt-16 bg-white/5 border border-white/15 rounded-3xl p-8 max-w-3xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+          <div>
+            <h4 class="font-times-condensed text-2xl text-sunlit">Interactive Clean-Label Macro Analyzer</h4>
+            <p class="text-xs text-taupe/70 mt-1">Select the weight of raw Rica to see your clean lipid macros instantly.</p>
+          </div>
+          <!-- Selection bar -->
+          <div class="mt-4 md:mt-0 flex bg-white/10 p-1.5 rounded-xl border border-white/10">
+            <button onclick="calculateMacros(100, this)" class="macro-tab px-4 py-1.5 rounded-lg text-xs font-bold bg-sunlit text-forest transition-all">100g</button>
+            <button onclick="calculateMacros(227, this)" class="macro-tab px-4 py-1.5 rounded-lg text-xs font-bold text-taupe/80 hover:text-white transition-all">227g (8oz Container)</button>
+          </div>
+        </div>
+
+        <!-- Calculated output figures -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center border-t border-white/10 pt-6">
+          <div class="flex flex-col bg-white/5 p-4 rounded-xl border border-white/5">
+            <span id="macro-calories" class="text-3xl font-bold font-times-condensed text-white">160 kcal</span>
+            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1">Total Calories</span>
+          </div>
+          <div class="flex flex-col bg-white/5 p-4 rounded-xl border border-white/5">
+            <span id="macro-fat" class="text-3xl font-bold font-times-condensed text-white">15.0 g</span>
+            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1">Healthy Monounsaturated Fat</span>
+          </div>
+          <div class="flex flex-col bg-white/5 p-4 rounded-xl border border-white/5">
+            <span id="macro-fiber" class="text-3xl font-bold font-times-condensed text-white">7.0 g</span>
+            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1">Dietary Fiber</span>
+          </div>
+          <div class="flex flex-col bg-white/5 p-4 rounded-xl border border-white/5">
+            <span id="macro-protein" class="text-3xl font-bold font-times-condensed text-white">2.0 g</span>
+            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1">Plant Protein</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: OUR JOURNEY (SOCIAL INTEGRATION) -->
+  <section id="our-journey" class="py-24 px-6 bg-white relative overflow-hidden">
+    <!-- Abstract Overlays framing layout -->
+    <div class="absolute top-1/4 left-0 w-48 h-96 border-l-2 border-dashed border-forest/15 rounded-r-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-12 right-12 w-64 h-64 bg-sunlit/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-terracotta font-opensans">Community & Heritage</span>
+        <h2 class="text-4xl md:text-6xl text-forest font-times-condensed mt-2">
+          <span class="font-pinyon text-5xl md:text-8xl text-terracotta leading-none block md:inline">O</span>ur Journey
+        </h2>
+        <p class="text-base text-forest/70 mt-4 leading-relaxed font-helvetica">
+          Watch how we grew from a small kitchen operation to the premium standard of guacamole packaging. Follow our farm harvest, taste test reactions, and culinary behind-the-scenes.
+        </p>
+      </div>
+
+      <!-- Carousel Track with 3 Chronological Reels mapping evolution -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Reel Slot 1: Sourcing (Interactive simulated interface) -->
+        <div class="bg-taupe rounded-[32px] p-4 border border-obsidian/10 shadow-lg relative group transition-transform duration-300 hover:-translate-y-1">
+          <!-- Reel Header (Open Sans bold & regular) -->
+          <div class="flex items-center justify-between mb-3 px-1 font-opensans">
+            <div class="flex items-center space-x-2">
+              <span class="w-6 h-6 rounded-full bg-forest text-[10px] flex items-center justify-center text-white font-bold">R</span>
+              <span class="text-[11px] font-bold text-forest">@rica.fresh</span>
+            </div>
+            <span class="text-[10px] bg-avocado/20 text-forest px-2 py-0.5 rounded-full font-bold uppercase tracking-widest">harvest</span>
+          </div>
+
+          <!-- Reel Screen container (Using looping pure CSS animated elements to simulate video playback) -->
+          <div class="relative rounded-2xl aspect-[9/16] bg-gradient-to-b from-[#1E3512] via-[#2A3F1F] to-black overflow-hidden flex flex-col justify-between p-4 text-white">
+            <!-- Simulated Video Animation: Plucking Avocados -->
+            <div class="absolute inset-0 z-0 flex flex-col items-center justify-center opacity-70">
+              <!-- Leaf Vectors floating up to simulate fresh farm motion -->
+              <div class="absolute w-full h-full overflow-hidden">
+                <div class="absolute bg-avocado/20 w-4 h-4 rounded-full top-[20%] left-[30%] animate-ping" style="animation-duration: 3s"></div>
+                <div class="absolute bg-sunlit/20 w-3 h-3 rounded-full top-[60%] left-[80%] animate-ping" style="animation-duration: 4s"></div>
+                <div class="absolute bg-avocado/15 w-5 h-5 rounded-full top-[40%] left-[70%] animate-ping" style="animation-duration: 2.5s"></div>
+              </div>
+              <svg class="w-24 h-24 text-sunlit animate-pulse duration-1000" viewBox="0 0 100 100">
+                <path d="M 50,20 Q 70,35 60,65 Q 40,85 40,65 Q 30,35 50,20" fill="#799C3A"/>
+                <circle cx="50" cy="55" r="12" fill="#F2D049"/>
+              </svg>
+            </div>
+
+            <!-- UI Overlay: Playing Badge -->
+            <div class="flex justify-between items-center z-10 font-opensans">
+              <span class="text-[9px] bg-black/40 px-2 py-0.5 rounded-full flex items-center space-x-1">
+                <span class="w-1.5 h-1.5 bg-rose-500 rounded-full animate-pulse"></span>
+                <span>SIMULATED REEL 01</span>
+              </span>
+              <button onclick="toggleAudio(1, this)" class="bg-black/40 p-1.5 rounded-full text-white hover:bg-black/60 transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5" id="audio-icon-1"></i>
+              </button>
+            </div>
+
+            <!-- UI Overlay: Bottom comments/details -->
+            <div class="z-10 bg-gradient-to-t from-black/80 to-transparent p-2 rounded-xl">
+              <p class="text-[11px] font-opensans leading-snug">
+                <strong>@rica.fresh</strong> 🥑 Picked at prime ripeness directly in Michoacán orchards. From soil to package in hours.
+              </p>
+              <div class="flex items-center space-x-3 mt-2 text-[10px] text-taupe font-opensans">
+                <span>1,248 likes</span>
+                <span>• 42 comments</span>
+              </div>
+            </div>
+
+            <!-- Side Interactive Buttons -->
+            <div class="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col space-y-4 z-20">
+              <button onclick="likeReel(1, this)" class="bg-black/50 p-2 rounded-full flex flex-col items-center hover:scale-110 transition text-white">
+                <i data-lucide="heart" class="w-4 h-4 text-white" id="heart-icon-1"></i>
+                <span class="text-[8px] mt-1" id="heart-count-1">1.2k</span>
+              </button>
+              <button onclick="showCommentsModal('harvest')" class="bg-black/50 p-2 rounded-full flex flex-col items-center hover:scale-110 transition text-white">
+                <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+                <span class="text-[8px] mt-1">42</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Chronology indicator text -->
+          <div class="mt-4 text-center">
+            <span class="font-times-condensed text-lg text-forest">01. Direct Sourcing</span>
+            <p class="text-[11px] text-forest/60 mt-0.5">Sourcing verified prime Hass crops.</p>
+          </div>
+        </div>
+
+        <!-- Reel Slot 2: Crunch ASMR (Interactive simulated interface) -->
+        <div class="bg-taupe rounded-[32px] p-4 border border-obsidian/10 shadow-lg relative group transition-transform duration-300 hover:-translate-y-1">
+          <!-- Reel Header (Open Sans bold & regular) -->
+          <div class="flex items-center justify-between mb-3 px-1 font-opensans">
+            <div class="flex items-center space-x-2">
+              <span class="w-6 h-6 rounded-full bg-forest text-[10px] flex items-center justify-center text-white font-bold">R</span>
+              <span class="text-[11px] font-bold text-forest">@rica.fresh</span>
+            </div>
+            <span class="text-[10px] bg-terracotta/20 text-terracotta px-2 py-0.5 rounded-full font-bold uppercase tracking-widest">ASMR</span>
+          </div>
+
+          <!-- Reel Screen container -->
+          <div class="relative rounded-2xl aspect-[9/16] bg-gradient-to-b from-[#4A3525] via-[#C85C32] to-black overflow-hidden flex flex-col justify-between p-4 text-white">
+            <!-- Simulated Video Animation: Soundwaves / Chips Dipping -->
+            <div class="absolute inset-0 z-0 flex flex-col items-center justify-center opacity-70">
+              <!-- Soundwave rings moving dynamically -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="absolute border-2 border-sunlit/30 rounded-full w-24 h-24 animate-ping"></div>
+                <div class="absolute border-2 border-sunlit/20 rounded-full w-36 h-36 animate-ping" style="animation-delay: 1s"></div>
+              </div>
+              <!-- Chip vector -->
+              <svg class="w-20 h-20 text-sunlit" viewBox="0 0 100 100">
+                <path d="M 20,80 L 80,80 L 50,20 Z" fill="#F2D049" stroke="#4A3525" stroke-width="2"/>
+                <!-- Dip scoop representation -->
+                <path d="M 40,50 C 45,45 55,45 60,50 L 50,20 Z" fill="#799C3A"/>
+              </svg>
+            </div>
+
+            <!-- UI Overlay: Playing Badge -->
+            <div class="flex justify-between items-center z-10 font-opensans">
+              <span class="text-[9px] bg-black/40 px-2 py-0.5 rounded-full flex items-center space-x-1">
+                <span class="w-1.5 h-1.5 bg-rose-500 rounded-full animate-pulse"></span>
+                <span>SIMULATED REEL 02</span>
+              </span>
+              <button onclick="toggleAudio(2, this)" class="bg-black/40 p-1.5 rounded-full text-white hover:bg-black/60 transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5" id="audio-icon-2"></i>
+              </button>
+            </div>
+
+            <!-- UI Overlay: Bottom comments/details -->
+            <div class="z-10 bg-gradient-to-t from-black/80 to-transparent p-2 rounded-xl">
+              <p class="text-[11px] font-opensans leading-snug">
+                <strong>@rica.fresh</strong> 🔊 Sound up! The crisp snap of artisanal hand-cooked tortilla chips paired with perfect Rica.
+              </p>
+              <div class="flex items-center space-x-3 mt-2 text-[10px] text-taupe font-opensans">
+                <span>3,892 likes</span>
+                <span>• 112 comments</span>
+              </div>
+            </div>
+
+            <!-- Side Interactive Buttons -->
+            <div class="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col space-y-4 z-20">
+              <button onclick="likeReel(2, this)" class="bg-black/50 p-2 rounded-full flex flex-col items-center hover:scale-110 transition text-white">
+                <i data-lucide="heart" class="w-4 h-4 text-white" id="heart-icon-2"></i>
+                <span class="text-[8px] mt-1" id="heart-count-2">3.8k</span>
+              </button>
+              <button onclick="showCommentsModal('asmr')" class="bg-black/50 p-2 rounded-full flex flex-col items-center hover:scale-110 transition text-white">
+                <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+                <span class="text-[8px] mt-1">112</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Chronology indicator text -->
+          <div class="mt-4 text-center">
+            <span class="font-times-condensed text-lg text-forest">02. Sound of Pure Texture</span>
+            <p class="text-[11px] text-forest/60 mt-0.5">The ASMR crunch test validation.</p>
+          </div>
+        </div>
+
+        <!-- Reel Slot 3: Taste Test (Interactive simulated interface) -->
+        <div class="bg-taupe rounded-[32px] p-4 border border-obsidian/10 shadow-lg relative group transition-transform duration-300 hover:-translate-y-1">
+          <!-- Reel Header (Open Sans bold & regular) -->
+          <div class="flex items-center justify-between mb-3 px-1 font-opensans">
+            <div class="flex items-center space-x-2">
+              <span class="w-6 h-6 rounded-full bg-forest text-[10px] flex items-center justify-center text-white font-bold">R</span>
+              <span class="text-[11px] font-bold text-forest">@rica.fresh</span>
+            </div>
+            <span class="text-[10px] bg-turquoise/20 text-turquoise px-2 py-0.5 rounded-full font-bold uppercase tracking-widest">tasting</span>
+          </div>
+
+          <!-- Reel Screen container -->
+          <div class="relative rounded-2xl aspect-[9/16] bg-gradient-to-b from-[#113533] via-[#1BB0AD] to-black overflow-hidden flex flex-col justify-between p-4 text-white">
+            <!-- Simulated Video Animation: Tasting Reaction / Confetti -->
+            <div class="absolute inset-0 z-0 flex flex-col items-center justify-center opacity-70">
+              <!-- Confetti loops -->
+              <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute bg-sunlit w-2 h-2 rounded-full top-[10%] left-[20%] animate-ping" style="animation-duration: 1.5s"></div>
+                <div class="absolute bg-white w-2 h-3 top-[50%] left-[40%] animate-bounce" style="animation-duration: 2s"></div>
+                <div class="absolute bg-terracotta w-3 h-2 top-[30%] left-[80%] animate-bounce" style="animation-duration: 1.8s"></div>
+              </div>
+              <svg class="w-24 h-24 text-sunlit" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="30" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="4,4"/>
+                <path d="M 35,45 Q 50,60 65,45" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <!-- Star Eyes -->
+                <polygon points="35,25 38,32 45,32 40,36 42,43 35,39 28,43 30,36 25,32 32,32" fill="#F2D049"/>
+                <polygon points="65,25 68,32 75,32 70,36 72,43 65,39 58,43 60,36 55,32 62,32" fill="#F2D049"/>
+              </svg>
+            </div>
+
+            <!-- UI Overlay: Playing Badge -->
+            <div class="flex justify-between items-center z-10 font-opensans">
+              <span class="text-[9px] bg-black/40 px-2 py-0.5 rounded-full flex items-center space-x-1">
+                <span class="w-1.5 h-1.5 bg-rose-500 rounded-full animate-pulse"></span>
+                <span>SIMULATED REEL 03</span>
+              </span>
+              <button onclick="toggleAudio(3, this)" class="bg-black/40 p-1.5 rounded-full text-white hover:bg-black/60 transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5" id="audio-icon-3"></i>
+              </button>
+            </div>
+
+            <!-- UI Overlay: Bottom comments/details -->
+            <div class="z-10 bg-gradient-to-t from-black/80 to-transparent p-2 rounded-xl">
+              <p class="text-[11px] font-opensans leading-snug">
+                <strong>@rica.fresh</strong> 🥄 Elite tableside blind taste test. Gourmet food critics can't tell Rica apart from 5-star prep.
+              </p>
+              <div class="flex items-center space-x-3 mt-2 text-[10px] text-taupe font-opensans">
+                <span>5,124 likes</span>
+                <span>• 192 comments</span>
+              </div>
+            </div>
+
+            <!-- Side Interactive Buttons -->
+            <div class="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col space-y-4 z-20">
+              <button onclick="likeReel(3, this)" class="bg-black/50 p-2 rounded-full flex flex-col items-center hover:scale-110 transition text-white">
+                <i data-lucide="heart" class="w-4 h-4 text-white" id="heart-icon-3"></i>
+                <span class="text-[8px] mt-1" id="heart-count-3">5.1k</span>
+              </button>
+              <button onclick="showCommentsModal('tasting')" class="bg-black/50 p-2 rounded-full flex flex-col items-center hover:scale-110 transition text-white">
+                <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+                <span class="text-[8px] mt-1">192</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Chronology indicator text -->
+          <div class="mt-4 text-center">
+            <span class="font-times-condensed text-lg text-forest">03. Culinary Endorsement</span>
+            <p class="text-[11px] text-forest/60 mt-0.5">Critics mistaking Rica for raw table prep.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENTS MODAL FOR SIMULATED REELS -->
+  <div id="comments-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden border border-forest shadow-2xl transform scale-95 transition-transform duration-300">
+      <div class="bg-forest p-6 text-white flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="message-circle" class="w-5 h-5 text-sunlit"></i>
+          <span class="font-times-condensed text-xl tracking-wide">Community Reactions</span>
+        </div>
+        <button onclick="closeCommentsModal()" class="text-white/80 hover:text-white transition">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <div id="comments-list" class="p-6 max-h-80 overflow-y-auto space-y-4 font-opensans text-xs text-forest/80">
+        <!-- Dynamic comment blocks populate here -->
+      </div>
+      <div class="bg-taupe p-4 border-t border-forest/10 flex items-center space-x-2">
+        <input id="new-comment-input" type="text" placeholder="Add custom comment..." class="flex-grow bg-white border border-forest/20 rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-avocado" />
+        <button onclick="submitSimulatedComment()" class="bg-terracotta hover:bg-forest text-white px-4 py-2.5 rounded-xl font-bold text-xs transition">
+          Post
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: WHERE TO FIND US (FOOTER / LOCAL CHECKUP) -->
+  <section id="store-locator" class="py-24 px-6 bg-[#1A2E10] text-white border-t-4 border-sunlit relative overflow-hidden">
+    <!-- Fine-line art grid framing footer -->
+    <div class="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left descriptor text -->
+        <div class="lg:col-span-6 flex flex-col space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-sunlit font-opensans">Premium Distribution Channels</span>
+          <h2 class="text-4xl md:text-6xl font-times-condensed leading-tight">
+            <span class="font-pinyon text-5xl md:text-8xl text-sunlit leading-none block md:inline">W</span>here to Find Us
+          </h2>
+          <p class="text-xs text-taupe/85 max-w-md leading-relaxed">
+            Rica is rapidly expanding into premium organic grocers, gourmet specialty markets, and quick-commerce channels. Enter your ZIP code to verify immediate local shelf availability or register for shipping availability.
+          </p>
+
+          <!-- Standard indicators Grid / Delivery logos representation -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-white/10 max-w-lg">
+            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+              <span class="font-times-condensed text-sm tracking-widest text-sunlit block font-bold">EREWHON</span>
+              <span class="text-[9px] uppercase text-taupe/60">Selected Stores</span>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+              <span class="font-times-condensed text-sm tracking-widest text-sunlit block font-bold">WHOLE FOODS</span>
+              <span class="text-[9px] uppercase text-taupe/60">Premium Sections</span>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+              <span class="font-times-condensed text-sm tracking-widest text-sunlit block font-bold">INSTACART</span>
+              <span class="text-[9px] uppercase text-taupe/60">Quick Dispatch</span>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+              <span class="font-times-condensed text-sm tracking-widest text-sunlit block font-bold">GETIR / DOOR</span>
+              <span class="text-[9px] uppercase text-taupe/60">Ultra-fast delivery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive ZIP Code locator and Fallback form block -->
+        <div class="lg:col-span-6">
+          <div class="bg-white rounded-3xl p-8 border-2 border-sunlit shadow-2xl text-obsidian relative">
+            <div class="absolute inset-2 border border-dashed border-avocado/30 rounded-2xl pointer-events-none"></div>
+
+            <h3 class="font-times-condensed text-2xl text-forest mb-2">Live Availability Check</h3>
+            <p class="text-xs text-forest/70 mb-6 leading-relaxed">
+              Enter your current residential postal code to search local stock. 
+              <br class="hidden sm:inline"><em>Try <strong class="text-terracotta">400001</strong>, <strong class="text-terracotta">400019</strong>, or <strong class="text-terracotta">400074</strong> to simulate stock!</em>
+            </p>
+
+            <!-- ZIP code search bar -->
+            <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+              <input id="zip-input" type="text" placeholder="Enter ZIP (e.g. 4000001)" class="flex-grow bg-taupe/80 border border-forest/20 rounded-xl px-5 py-3.5 text-sm font-semibold tracking-wide uppercase focus:outline-none focus:border-avocado text-forest font-opensans" />
+              <button onclick="checkZipAvailability()" class="bg-forest hover:bg-avocado text-white px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300">
+                Search Area
+              </button>
+            </div>
+
+            <!-- SEARCH RESULTS AREA -->
+            <div id="locator-results-container" class="mt-6 border-t border-forest/10 pt-6 hidden">
+              
+              <!-- Case A: Match Available -->
+              <div id="locator-success" class="space-y-4 hidden">
+                <div class="flex items-center space-x-2 text-avocado">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  <span class="text-xs font-bold uppercase tracking-wider">Matched stockists near you!</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="bg-taupe/50 p-4 rounded-xl border border-forest/10 flex justify-between items-center">
+                    <div>
+                      <h4 class="font-times-condensed text-lg text-forest">Nature's Basket</h4>
+                      <p class="text-[11px] text-forest/60">Chembur Store</p>
+                    </div>
+                    <span class="text-[10px] bg-avocado text-white px-2.5 py-1 rounded-full font-bold uppercase">In Stock</span>
+                  </div>
+                  <div class="bg-taupe/50 p-4 rounded-xl border border-forest/10 flex justify-between items-center">
+                    <div>
+                      <h4 class="font-times-condensed text-lg text-forest">Star Bazaar</h4>
+                      <p class="text-[11px] text-forest/60">Churchgate store</p>
+                    </div>
+                    <span class="text-[10px] bg-avocado text-white px-2.5 py-1 rounded-full font-bold uppercase">In Stock</span>
+                  </div>
+                </div>
+                <button onclick="simulateOrder()" class="w-full bg-terracotta text-white py-3 rounded-xl text-xs font-semibold uppercase tracking-wider hover:bg-forest transition-colors mt-2">
+                  Place Courier Order Now
+                </button>
+              </div>
+
+              <!-- Case B: Fallback Logic (Coming Soon Capture) -->
+              <div id="locator-fallback" class="space-y-4 hidden">
+                <div class="flex items-center space-x-2 text-terracotta">
+                  <i data-lucide="bell" class="w-5 h-5"></i>
+                  <span class="text-xs font-bold uppercase tracking-wider">Coming Soon to Your Area!</span>
+                </div>
+                <p class="text-xs text-forest/70 leading-relaxed">
+                  We currently do not have instant retail inventory in your region. Drop your email below to receive a high-visibility <strong>"Coming Soon"</strong> alert when Rica hits local refrigerated cases.
+                </p>
+                <div id="notify-form-block" class="space-y-3 pt-2">
+                  <input id="fallback-email" type="email" placeholder="Your premium email address" class="w-full bg-taupe/80 border border-forest/20 rounded-xl px-5 py-3 text-xs font-semibold focus:outline-none focus:border-avocado text-forest" />
+                  <button onclick="submitWaitlist()" class="w-full bg-terracotta hover:bg-forest text-white py-3 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all">
+                    Register Area Notification
+                  </button>
+                </div>
+                <div id="notify-success-block" class="hidden bg-avocado/10 p-4 rounded-xl border border-avocado/30 text-center">
+                  <span class="text-xs font-bold text-forest">✨ Region logged! We will ping you when shipping opens in your postal code zone.</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FOOTER BASE -->
+      <footer class="mt-20 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-taupe/60 space-y-4 md:space-y-0 font-opensans">
+        <div class="flex items-center space-x-6">
+          <a href="#" class="flex items-center space-x-1">
+            <span class="font-pinyon text-3xl text-sunlit leading-none select-none">R</span>
+            <span class="font-times-condensed text-xl tracking-tight text-white -ml-1">ICA</span>
+          </a>
+          <span>© 2026 Rica Premium Dips Ltd. All rights reserved.</span>
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-sunlit transition-colors">Privacy Charter</a>
+          <a href="#" class="hover:text-sunlit transition-colors">Ingredient Integrity Code</a>
+          <a href="#" class="hover:text-sunlit transition-colors">Retail Partnerships</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+
+    // Hotspot Data State Management
+    function revealHotspot(id) {
+      // Hide all hotspot panels
+      document.getElementById('hotspot-default').classList.add('hidden');
+      document.getElementById('hotspot-1').classList.add('hidden');
+      document.getElementById('hotspot-2').classList.add('hidden');
+      document.getElementById('hotspot-3').classList.add('hidden');
+      
+      // Show selected panel
+      document.getElementById('hotspot-' + id).classList.remove('hidden');
+
+      // Trigger user visual toast
+      showToast("Inspecting Formulation Spec 0" + id + " 🔬");
+    }
+
+    function scrollToSpotlight() {
+      document.getElementById('product-spotlight').scrollIntoView({ behavior: 'smooth' });
+      revealHotspot(1);
+    }
+
+    // Interactive Macro Calculator Sizing Engine
+    function calculateMacros(weight, buttonElement) {
+      // Update macro-tabs styling
+      const tabs = document.querySelectorAll('.macro-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('bg-sunlit', 'text-forest');
+        tab.classList.add('text-taupe/80');
+      });
+      buttonElement.classList.add('bg-sunlit', 'text-forest');
+      buttonElement.classList.remove('text-taupe/80');
+
+      // Macro variables based on raw pure avocado matrices
+      let calories = 160;
+      let fats = 15;
+      let fiber = 7;
+      let protein = 2;
+
+      if (weight === 227) {
+        calories = 363;
+        fats = 34;
+        fiber = 16;
+        protein = 4.5;
+      }
+
+      document.getElementById('macro-calories').innerText = calories + " kcal";
+      document.getElementById('macro-fat').innerText = fats.toFixed(1) + " g";
+      document.getElementById('macro-fiber').innerText = fiber.toFixed(1) + " g";
+      document.getElementById('macro-protein').innerText = protein.toFixed(1) + " g";
+
+      showToast(`Macro stats adjusted for ${weight}g portions! ⚖️`);
+    }
+
+    // Simulated Instagram Reels Interactive Features
+    const audioStates = { 1: false, 2: false, 3: false };
+    function toggleAudio(id, btn) {
+      audioStates[id] = !audioStates[id];
+      const icon = document.getElementById('audio-icon-' + id);
+      if (audioStates[id]) {
+        icon.setAttribute('data-lucide', 'volume-2');
+        btn.classList.add('bg-avocado', 'text-white');
+        showToast("Audio simulation: Playing premium ASMR soundscape!");
+      } else {
+        icon.setAttribute('data-lucide', 'volume-x');
+        btn.classList.remove('bg-avocado');
+      }
+      lucide.createIcons();
+    }
+
+    const likeStates = { 1: false, 2: false, 3: false };
+    function likeReel(id, btn) {
+      likeStates[id] = !likeStates[id];
+      const heartIcon = document.getElementById('heart-icon-' + id);
+      const heartCountSpan = document.getElementById('heart-count-' + id);
+      
+      let initialCountVal = id === 1 ? 1.2 : id === 2 ? 3.8 : 5.1;
+
+      if (likeStates[id]) {
+        heartIcon.setAttribute('data-lucide', 'heart-off');
+        heartIcon.classList.add('text-rose-500', 'fill-rose-500');
+        heartCountSpan.innerText = (initialCountVal + 0.1).toFixed(1) + 'k';
+        showToast("Liked Reel! ❤️");
+      } else {
+        heartIcon.setAttribute('data-lucide', 'heart');
+        heartIcon.classList.remove('text-rose-500', 'fill-rose-500');
+        heartCountSpan.innerText = initialCountVal + 'k';
+      }
+      lucide.createIcons();
+    }
+
+    // Simulated comment lists database
+    const commentsDb = {
+      harvest: [
+        { user: 'healthy_vibe_99', comment: 'So good to know there is zero citric acid used here! Taste is unmatched.' },
+        { user: 'chef_el_cap', comment: 'Literally tastes like I tableside mashed it myself, great job Rica crew.' },
+        { user: 'fit_mama_j', comment: 'The kids love this and I feel safe knowing there are zero bad preservation chemicals.' }
+      ],
+      asmr: [
+        { user: 'asmr_lover', comment: 'Omg that crunch on loop is absolute therapy, so crisp!' },
+        { user: 'guac_monster', comment: 'Rica is elite. That chunk texture in the jar is everything.' },
+        { user: 'crisp_bite', comment: 'Wait what brand of chips is that? Match made in heaven' }
+      ],
+      tasting: [
+        { user: 'ny_gourmet', comment: 'I actually thought this was a high-end restaurant tableside bowl, absolute sorcery!' },
+        { user: 'keto_king', comment: 'My daily fat goals are easily hit with a container of classic Rica.' },
+        { user: 'somm_mary', comment: 'Clean ingredients shine through instantly.' }
+      ]
+    };
+
+    let activeReelCategory = '';
+
+    function showCommentsModal(category) {
+      activeReelCategory = category;
+      const list = document.getElementById('comments-list');
+      list.innerHTML = '';
+      
+      commentsDb[category].forEach(item => {
+        const commentDiv = document.createElement('div');
+        commentDiv.className = 'border-b border-forest/5 pb-2';
+        commentDiv.innerHTML = `<strong class="text-forest">@${item.user}</strong> <span class="text-forest/70">${item.comment}</span>`;
+        list.appendChild(commentDiv);
+      });
+
+      const modal = document.getElementById('comments-modal');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.children[0].classList.remove('scale-95');
+        modal.children[0].classList.add('scale-100');
+      }, 50);
+    }
+
+    function closeCommentsModal() {
+      const modal = document.getElementById('comments-modal');
+      modal.children[0].classList.remove('scale-100');
+      modal.children[0].classList.add('scale-95');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 150);
+    }
+
+    function submitSimulatedComment() {
+      const input = document.getElementById('new-comment-input');
+      const val = input.value.trim();
+      if (!val) return;
+
+      commentsDb[activeReelCategory].push({
+        user: 'you_gourmand',
+        comment: val
+      });
+
+      input.value = '';
+      showCommentsModal(activeReelCategory);
+      showToast("Comment published! 💬");
+    }
+
+    // Store Locator System
+    function checkZipAvailability() {
+      const zip = document.getElementById('zip-input').value.trim();
+      const resultsContainer = document.getElementById('locator-results-container');
+      const successBlock = document.getElementById('locator-success');
+      const fallbackBlock = document.getElementById('locator-fallback');
+
+      if (!zip) {
+        showToast("Please key in a valid residential postal code first.");
+        return;
+      }
+
+      resultsContainer.classList.remove('hidden');
+
+      // Check zip matching available simulations
+      if (zip === '400001' || zip === '400074' || zip === '400019') {
+        successBlock.classList.remove('hidden');
+        fallbackBlock.classList.add('hidden');
+        showToast("Hooray! Instant local stock found! 🎉");
+      } else {
+        successBlock.classList.add('hidden');
+        fallbackBlock.classList.remove('hidden');
+        document.getElementById('notify-form-block').classList.remove('hidden');
+        document.getElementById('notify-success-block').classList.add('hidden');
+        showToast("Rica is coming soon to your region. Let's alert you!");
+      }
+    }
+
+    function submitWaitlist() {
+      const email = document.getElementById('fallback-email').value.trim();
+      if (!email || !email.includes('@')) {
+        showToast("Please enter a valid premium email format.");
+        return;
+      }
+
+      // Save to mock storage
+      const zip = document.getElementById('zip-input').value.trim();
+      localStorage.setItem(`waitlist_zip_${zip}`, email);
+
+      document.getElementById('notify-form-block').classList.add('hidden');
+      document.getElementById('notify-success-block').classList.remove('hidden');
+      showToast("Notification zone logged successfully! 📩");
+    }
+
+    function simulateOrder() {
+      showToast("Order dispatched! Instant shipping partner assigned! 🚴");
+    }
+
+    // Custom Toast Engine
+    function showToast(text) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'bg-forest border border-sunlit text-white px-5 py-3 rounded-xl shadow-2xl flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider animate-bounce pointer-events-auto transition-all duration-300 transform translate-x-10 opacity-0';
+      toast.innerHTML = `<span class="w-1.5 h-1.5 bg-sunlit rounded-full"></span><span>${text}</span>`;
+      
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-x-10', 'opacity-0');
+      }, 50);
+
+      setTimeout(() => {
+        toast.classList.add('translate-x-10', 'opacity-0');
+        setTimeout(() => {
+          toast.remove();
+        }, 300);
+      }, 3500);
+    }
+
+    // Problem vs Solution Vertical Drag Comparison Slider Logic
+    const slider = document.getElementById('comparison-slider');
+    const afterLayer = document.getElementById('rica-after-layer');
+    const handle = document.getElementById('slider-handle');
+
+    let isSliding = false;
+
+    function moveSlider(clientX) {
+      const rect = slider.getBoundingClientRect();
+      const x = clientX - rect.left;
+      let pos = (x / rect.width) * 100;
+      
+      if (pos < 0) pos = 0;
+      if (pos > 100) pos = 100;
+
+      afterLayer.style.setProperty('--slider-pos', `${100 - pos}%`);
+      handle.style.left = `${pos}%`;
+    }
+
+    slider.addEventListener('mousedown', () => { isSliding = true; });
+    window.addEventListener('mouseup', () => { isSliding = false; });
+    
+    slider.addEventListener('mousemove', (e) => {
+      if (!isSliding) return;
+      moveSlider(e.clientX);
+    });
+
+    // Touch Support for comparison slider
+    slider.addEventListener('touchstart', () => { isSliding = true; });
+    window.addEventListener('touchend', () => { isSliding = false; });
+    slider.addEventListener('touchmove', (e) => {
+      if (!isSliding) return;
+      moveSlider(e.touches[0].clientX);
+    });
+
+  </script>
+</body>
+</html>
