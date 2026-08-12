@@ -1067,7 +1067,7 @@
       const fallbackBlock = document.getElementById('locator-fallback');
 
       if (!query) {
-        showToast("Please enter a pincode or area name first.");
+        //showToast("Please enter a pincode or area name first.");
         return;
       }
 
@@ -1081,17 +1081,17 @@
             renderStoreList(match);
             successBlock.classList.remove('hidden');
             fallbackBlock.classList.add('hidden');
-            showToast("Hooray! Instant local stock found! 🎉");
+            // showToast("Hooray! Instant local stock found! 🎉");
           } else {
             successBlock.classList.add('hidden');
             fallbackBlock.classList.remove('hidden');
             document.getElementById('notify-form-block').classList.remove('hidden');
             document.getElementById('notify-success-block').classList.add('hidden');
-            showToast("Rica is coming soon to your region. Let's alert you!");
+            // showToast("Rica is coming soon to your region. Let's alert you!");
           }
         })
         .catch(function () {
-          showToast("Unable to load store data. Please try again shortly.");
+          //showToast("Unable to load store data. Please try again shortly.");
         });
     }
 
