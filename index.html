@@ -745,33 +745,34 @@
       <div class="mt-16 bg-white/5 border border-white/15 rounded-3xl p-8 max-w-3xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
           <div>
-            <h4 class="font-times-condensed text-2xl text-sunlit">Interactive Clean-Label Macro Analyzer</h4>
-            <p class="text-xs text-taupe/70 mt-1">Select the weight of raw Rica to see your clean lipid macros instantly.</p>
+            <h4 class="font-times-condensed text-2xl text-sunlit font-bold">Interactive Clean-Label Macro Analyzer</h4>
+            <p class="text-xs text-taupe/70 mt-1 font-opensans">Select a product variant to view clean nutritional profiles per 100g portion.</p>
           </div>
           <!-- Selection bar -->
-          <div class="mt-4 md:mt-0 flex bg-white/10 p-1.5 rounded-xl border border-white/10">
-            <button onclick="calculateMacros(100, this)" class="macro-tab px-4 py-1.5 rounded-lg text-xs font-bold bg-sunlit text-forest transition-all">per 100g</button>
-            <!-- <button onclick="calculateMacros(227, this)" class="macro-tab px-4 py-1.5 rounded-lg text-xs font-bold text-taupe/80 hover:text-white transition-all">227g (8oz Container)</button> -->
+          <div class="mt-4 md:mt-0 flex bg-white/10 p-1.5 rounded-xl border border-white/10 gap-1">
+            <button onclick="selectVariantMacro('classic', this)" class="macro-tab px-4 py-1.5 rounded-lg text-xs font-bold bg-sunlit text-forest transition-all font-opensans">Classic</button>
+            <button onclick="selectVariantMacro('jain', this)" class="macro-tab px-4 py-1.5 rounded-lg text-xs font-bold text-taupe/80 hover:text-white transition-all font-opensans">Jain</button>
+            <button onclick="selectVariantMacro('slap', this)" class="macro-tab px-4 py-1.5 rounded-lg text-xs font-bold text-taupe/80 hover:text-white transition-all font-opensans">SLAP</button>
           </div>
         </div>
 
         <!-- Calculated output figures -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center border-t border-white/10 pt-6">
           <div class="flex flex-col bg-white/5 p-4 rounded-xl border border-white/5">
-            <span id="macro-calories" class="text-3xl font-bold font-times-condensed text-white">< 1.00mg</span>
-            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1">Cholesterol</span>
+            <span id="macro-cholestrol" class="text-3xl font-bold font-times-condensed text-white">< 2.00 mg</span>
+            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1 font-opensans">Cholestrol</span>
           </div>
           <div class="flex flex-col bg-white/5 p-4 rounded-xl border border-white/5">
-            <span id="macro-fat" class="text-3xl font-bold font-times-condensed text-white">4.30 g</span>
-            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1">Healthy Monounsaturated Fat</span>
+            <span id="macro-fat" class="text-3xl font-bold font-times-condensed text-white">7.73 g</span>
+            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1 font-opensans">Healthy Monounsaturated Fat</span>
           </div>
           <div class="flex flex-col bg-white/5 p-4 rounded-xl border border-white/5">
-            <span id="macro-fiber" class="text-3xl font-bold font-times-condensed text-white">9.89 g</span>
-            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1">Dietary Fiber</span>
+            <span id="macro-sugar" class="text-3xl font-bold font-times-condensed text-white">< 0.50 g</span>
+            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1 font-opensans">Added Sugar</span>
           </div>
           <div class="flex flex-col bg-white/5 p-4 rounded-xl border border-white/5">
-            <span id="macro-protein" class="text-3xl font-bold font-times-condensed text-white">2.71 g</span>
-            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1">Protein</span>
+            <span id="macro-protein" class="text-3xl font-bold font-times-condensed text-white">2.01 g</span>
+            <span class="text-[10px] uppercase tracking-wider text-taupe/60 mt-1 font-opensans">Protein</span>
           </div>
         </div>
       </div>
@@ -960,8 +961,29 @@
       revealHotspot(1);
     }
 
-    // Interactive Macro Calculator Sizing Engine
-    function calculateMacros(weight, buttonElement) {
+    // Interactive Macro Analyzer Variant Engine
+    const variantMacros = {
+      classic: {
+        cholestrol: "< 2.00 mg",
+        fat: "7.73 g",
+        sugar: "< 0.50 g",
+        protein: "2.01 g",
+      },
+      jain: {
+        cholestrol: "< 2.00 mg",
+        fat: "7.57 g",
+        sugar: "< 0.50 g",
+        protein: "2.00 g",
+      },
+      slap: {
+        cholestrol: "< 2.00 mg",
+        fat: "9.4 g",
+        sugar: "< 0.50 g",
+        protein: "2.22 g",
+      }
+    };
+
+    function selectVariantMacro(variant, buttonElement) {
       // Update macro-tabs styling
       const tabs = document.querySelectorAll('.macro-tab');
       tabs.forEach(tab => {
@@ -971,25 +993,12 @@
       buttonElement.classList.add('bg-sunlit', 'text-forest');
       buttonElement.classList.remove('text-taupe/80');
 
-      // Macro variables based on raw pure avocado matrices
-      let calories = 160;
-      let fats = 15;
-      let fiber = 7;
-      let protein = 2;
+      const data = variantMacros[variant] || variantMacros.classic;
 
-      if (weight === 227) {
-        calories = 363;
-        fats = 34;
-        fiber = 16;
-        protein = 4.5;
-      }
-
-      document.getElementById('macro-calories').innerText = calories + " kcal";
-      document.getElementById('macro-fat').innerText = fats.toFixed(1) + " g";
-      document.getElementById('macro-fiber').innerText = fiber.toFixed(1) + " g";
-      document.getElementById('macro-protein').innerText = protein.toFixed(1) + " g";
-
-      showToast(`Macro stats adjusted for ${weight}g portions! ⚖️`);
+      document.getElementById('macro-cholestrol').innerText = data.cholestrol;
+      document.getElementById('macro-fat').innerText = data.fat;
+      document.getElementById('macro-sugar').innerText = data.sugar;
+      document.getElementById('macro-protein').innerText = data.protein;
     }
 
     // Store Locator System — loaded from Google Sheet
